@@ -15,6 +15,7 @@ import { RQSuperHeroPage } from './components/RQSuperHero.page.jsx'
 import { ParallelQueriesPage } from './components/ParallelQueries.page.jsx'
 import { DynamicParallelPage } from './components/DynamicParallel.page.jsx'
 import { PaginatedQueriesPage } from './components/PaginatedQueries.page.jsx'
+import { InfiniteQueriesPage } from './components/InfiniteQueries.page.jsx'
 
 
 
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
     
     <Route path="/" element = {<Layout/>}>
       <Route path="" element={<HomePage/>} />
+      <Route path='/rq-infinite' element = { < InfiniteQueriesPage/>} />
       <Route path = '/rq-parallel' element= {<ParallelQueriesPage/>} />
       <Route path = "/rq-dynamic-parallel" element = {<DynamicParallelPage heroIds={[1, 3]}/>}   />
       <Route path = "rq-paginated"  element= {< PaginatedQueriesPage /> }  />

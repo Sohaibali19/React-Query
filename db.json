@@ -1,74 +1,98 @@
-
 {
-        "superheroes": [
-            {
-                "id": 1,
-                "name": "Batman",
-                "alterEgo": "Bruce Wayne"
-            },
-            {
-                "id": 2,
-                "name": "Superman",
-                "alterEgo": "Clark Kent"
-            },
-            {
-                "id": 3,
-                "name": "Wonder Woman",
-                "alterEgo": "Princess Diana"
-            }
-        ],
-
-        "Friends": [
-            {
-                "id": 1,
-                "name": "Muhammad Ali"
-            },
-            {
-                "id": 2,
-                "name": "Muhammad Khan"
-            },
-            {
-                "id": 3,
-                "name": "Muhammad Sami"
-            },
-            {
-                "id": 4,
-                "name": "Muhammad Jamal"
-            }
-        ],
-
-        "colors" : [
-            {
-                "id": "1",
-                "label": "Red"
-            },
-            {
-                "id": "2",
-                "label": "Green"
-            },
-            {
-                "id": "3",
-                "label": "Yellow"
-            },
-            {
-                "id": "4",
-                "label": "Black"
-            },
-            {
-                 "id": "5",
-                "label": "Orange"
-            },
-            {
-                "id": "6",
-                "label": "Purple"
-            },
-            {
-                "id": "7",
-                "label": "White"
-            },
-            {
-                "id": "8",
-                "label": "Blue"
-            }    
-        ]
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "id": "bdfe",
+      "name": "The Flash",
+      "alterego": "Berry Alien"
+    },
+    {
+      "id": "922a",
+      "name": "Total Dhamal",
+      "alterego": "Diana "
+    },
+    {
+      "id": "0475",
+      "name": "mission Impossible",
+      "alterego": "Tom Cruise"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chandler Bing"
+    },
+    {
+      "id": 2,
+      "name": "Joey Tribbiani"
+    },
+    {
+      "id": 3,
+      "name": "Rachel Green"
+    }
+  ],
+  "users": [
+    {
+      "id": "vishwas@example.com",
+      "channelId": "codevolution"
+    }
+  ],
+  "channels": [
+    {
+      "id": "codevolution",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "white"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "purple"
+    }
+  ]
 }

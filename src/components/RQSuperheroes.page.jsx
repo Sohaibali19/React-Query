@@ -1,14 +1,16 @@
-import React from 'react'
-import { useQuery } from 'react-query'
-import axios from 'axios'
+import {React, useState} from 'react'
 import { useSuperHeroesData } from '../hooks/UseSuperHeroesData'
 import {Link} from 'react-router-dom'
+import { useAddSuperHeroData } from '../hooks/UseSuperHeroesData'
 
 // const fetchSuperHeroes = () => {
 //   return axios.get('http://localhost:4000/superheroes')
 // }
 
 export const  RQSuperheroesPage = () => {
+  const [name, setName] = useState('')
+  const [alterego, setAlterEgo] = useState('')
+
 
   const onSucces = (data)  => {
     return console.log("Perform the side effect after data fetching")
@@ -18,8 +20,11 @@ export const  RQSuperheroesPage = () => {
     return console.log("Perform the side effect after encountering an error")
   }
 
-  const {isLoading, data, isError, error, isFetching, refetch} =
+  const {isLoading, data, isError, error,  refetch} =
   useSuperHeroesData(onSucces, onError)
+
+
+  const { mutate: AddHero} = useAddSuperHeroData()
   // useQuery('super-heroes', 
   //   fetchSuperHeroes,
   //   {
@@ -46,7 +51,11 @@ export const  RQSuperheroesPage = () => {
   //   return axios.get('http://localhost:4000/superheroes')
   // })
    
-  console.log({isLoading, isFetching})
+   const handleAddHeroClick = () => {
+    
+    const hero = {name, alterego}
+    AddHero(hero)
+   }
 
   if(isLoading) {
     return <h2 className='text-[30px] font-bold '>Loading....</h2>
@@ -59,12 +68,28 @@ export const  RQSuperheroesPage = () => {
   return (
     <>
     <div className='text-[30px] font-bold'>RQ Super Heroes Page</div>
-    <button onClick={refetch} className='p-3 bg-red-200 border-black'>Fetch Heroes</button>
+    <div>
+      <input className='p-2 border-[1px] border-gray-500 '
+      type='text'
+      value = {name}
+      onChange={(e) => setName(e.target.value)}
+      />
+      <input className='p-2 border-[1px] border-gray-500 '
+      type='text'
+      value = {alterego}
+      onChange={(e) => setAlterEgo(e.target.value)}
+      />
+      <button onClick={handleAddHeroClick} className='p-3 bg-red-200 border-2 border-gray-800'>Add Hero</button>
+    </div>
+    <button onClick={refetch} className='p-3 bg-green-200 border-black'>Fetch Heroes</button>
     {
-      data?.data.map((hero) => {
+      data?.data.map(hero => {
         // return <div key={hero.name}>{hero.name}</div>
-        return ( <div key={hero.id}>
-          <Link to={`/rq-super-heroes/${hero.id}`} className='underline-offset-2 underline'>{hero.name}</Link>
+        return ( 
+        <div key={hero.id}>
+          <Link to={`/rq-super-heroes/${hero.id}`} className='underline-offset-2 underline'>
+         {hero.id} {hero.name}
+          </Link>
         </div>
         )
       })}
