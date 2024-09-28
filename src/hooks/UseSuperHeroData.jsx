@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useQuery } from "react-query"
+import { useQuery, useQueryClient } from "react-query"
 
 
 const fetchSuperHero = ({queryKey}) => {
@@ -8,7 +8,23 @@ const fetchSuperHero = ({queryKey}) => {
 }
 
 export const useSuperHeroData = (heroId) => {
+    const queryClient = useQueryClient()
     // return useQuery( ['super-hero', heroId], () => fetchSuperHero(heroId) ) // we can use another method for fetcher function. see below
     //create querykey as above instead of heroId
-    return useQuery (['super-hero', heroId], fetchSuperHero)
+    return useQuery (['super-hero', heroId], fetchSuperHero, {
+        initialData: () => {
+            const hero = queryClient
+            .getQueryData('super-heroes')
+            ?.data?.find((hero) => hero.id === parseInt(heroId))
+
+            if(hero) {
+                return {
+                    data:hero
+                        }
+                    }
+              else {
+                    return undefined
+                 }
+            },
+    })
 }

@@ -35,5 +35,40 @@
                 "id": 4,
                 "name": "Muhammad Jamal"
             }
+        ],
+
+        "colors" : [
+            {
+                "id": "1",
+                "label": "Red"
+            },
+            {
+                "id": "2",
+                "label": "Green"
+            },
+            {
+                "id": "3",
+                "label": "Yellow"
+            },
+            {
+                "id": "4",
+                "label": "Black"
+            },
+            {
+                 "id": "5",
+                "label": "Orange"
+            },
+            {
+                "id": "6",
+                "label": "Purple"
+            },
+            {
+                "id": "7",
+                "label": "White"
+            },
+            {
+                "id": "8",
+                "label": "Blue"
+            }    
         ]
 }

@@ -13,6 +13,8 @@ import { QueryClientProvider, QueryClient } from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 import { RQSuperHeroPage } from './components/RQSuperHero.page.jsx'
 import { ParallelQueriesPage } from './components/ParallelQueries.page.jsx'
+import { DynamicParallelPage } from './components/DynamicParallel.page.jsx'
+import { PaginatedQueriesPage } from './components/PaginatedQueries.page.jsx'
 
 
 
@@ -48,7 +50,9 @@ const router = createBrowserRouter(
     
     <Route path="/" element = {<Layout/>}>
       <Route path="" element={<HomePage/>} />
-      <Route path = 'rq-parallel' element= {<ParallelQueriesPage/>} />
+      <Route path = '/rq-parallel' element= {<ParallelQueriesPage/>} />
+      <Route path = "/rq-dynamic-parallel" element = {<DynamicParallelPage heroIds={[1, 3]}/>}   />
+      <Route path = "rq-paginated"  element= {< PaginatedQueriesPage /> }  />
       <Route path = "/rq-super-heroes/:heroId" element={<RQSuperHeroPage/>} />
       <Route path="/super-heroes" element={<SuperheroesPage/>} />
       <Route path="/rq-super-heroes" element={<RQSuperheroesPage/>} />
